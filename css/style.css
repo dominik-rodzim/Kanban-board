@@ -117,9 +117,9 @@ template { display: none; }
 
 .board .column-container .column { min-width: 300px; padding: 20px; background-color: rgba(255, 255, 255, 0.4); border-radius: 20px; margin-right: 20px; position: relative; }
 
-.board .column-container .column:hover .btn-delete { display: block; }
+.board .column-container .column:hover > .btn-delete { display: block; }
 
-.board .column-container .column ul { padding: 0; list-style: none; }
+.board .column-container .column ul { padding: 0; list-style: none; min-height: 35px; }
 
 .board .column-container .column ul .card { background-color: rgba(255, 255, 255, 0.9); padding: 20px; border-radius: 5px; margin-bottom: 12px; border-bottom: 2px solid #99c0e5; transition: .3s; font-family: 'Roboto'; position: relative; font-weight: 300; }
 
@@ -137,6 +137,6 @@ h1:hover { color: #dbdbdb; }
 
 h2 { font-family: 'Montserrat', sans-serif; }
 
-.btn-delete { position: absolute; top: -10px; right: -7px; padding: 5px 10px; border-radius: 50%; border: 2px solid white; display: none; transition: .3s; background: linear-gradient(to bottom, #ff3019 0%, #cf0404 100%); color: white; font-weight: 700; }
+.btn-delete { position: absolute; top: -10px; right: -7px; padding: 5px 10px; border-radius: 50%; border: 2px solid white; display: none; transition: .3s; background: linear-gradient(to bottom, #ff3019 0%, #cf0404 100%); color: white; font-weight: 700; font-family: 'Roboto', sans-serif; }
 
 .btn-delete:hover { background: radial-gradient(ellipse at center, #ff3019 0%, #cf0404 100%); cursor: pointer; }

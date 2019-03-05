@@ -34,14 +34,13 @@
 		    border-radius: 20px;
 		    margin-right: 20px;
 		    position: relative;
-		    &:hover {
-				.btn-delete {
-					display: block;
-				}
-		    }
+		    &:hover > .btn-delete {
+				display: block;
+			}
 		    ul {
 			    padding: 0;
 	    		list-style: none;
+	    		min-height: 35px;
 	    		.card {
 	    		    background-color: rgba(255, 255, 255, .9);
 				    padding: 20px;
@@ -105,6 +104,7 @@ h2 {
 	background: linear-gradient(to bottom, #ff3019 0%,#cf0404 100%);
 	color: white;
 	font-weight: 700;
+	font-family: 'Roboto', sans-serif;
 	&:hover {
 		background: radial-gradient(ellipse at center, #ff3019 0%,#cf0404 100%);
 		cursor: pointer;

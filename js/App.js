@@ -10,13 +10,14 @@ function generateTemplate(name, data, basicElement) {
   	return element;
 }
 
-var baseUrl = 'https://kodilla.com/pl/bootcamp-api';
+var prefix = 'https://cors-anywhere.herokuapp.com/'
+var baseUrl = prefix + 'https://kodilla.com/pl/bootcamp-api';
 var myHeaders = {
-  'X-Client-Id': '3849',
+  'X-Client-Id': 3849,
   'X-Auth-Token': 'cc609e5acf52358a76311a0f19e5a7a1'
 };
 
-fetch(baseUrl + '/board', { headers: myHeaders })
+fetch(baseUrl + '/board', {method: 'GET', headers: myHeaders })
   .then(function(resp) {
     return resp.json();
   })
@@ -25,11 +26,11 @@ fetch(baseUrl + '/board', { headers: myHeaders })
   });
 
 function setupColumns(columns) {
-  columns.forEach(function (column) {
+	columns.forEach(function (column) {
 		var col = new Column(column.id, column.name);
-    board.addColumn(col);
-    setupCards(col, column.cards);
-  });
+	    board.addColumn(col);
+	    setupCards(col, column.cards);
+  	});
 }
 
 function setupCards(col, cards) {
