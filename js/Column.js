@@ -36,12 +36,15 @@ Column.prototype = {
     },
     removeColumn: function () {
         var self = this;
-        fetch(baseUrl + '/column/' + self.id, {method: 'DELETE', headers: myHeaders})
-            .then(function(resp){
-                return resp.json();
-            })
-            .then(function(){
-                self.element.parentNode.removeChild(self.element);
-            })
+        fetch(baseUrl + '/column/' + self.id, {
+            method: 'DELETE', 
+            headers: myHeaders
+        })
+        .then(function(resp) {
+            return resp.json();
+        })
+        .then(function() {
+            self.element.parentNode.removeChild(self.element);
+        })
     }
 }
