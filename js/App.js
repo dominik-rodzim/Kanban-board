@@ -17,13 +17,16 @@ var myHeaders = {
   'X-Auth-Token': 'cc609e5acf52358a76311a0f19e5a7a1'
 };
 
-fetch(baseUrl + '/board', {method: 'GET', headers: myHeaders })
-  .then(function(resp) {
-    return resp.json();
-  })
-  .then(function(resp) {
-    setupColumns(resp.columns);
-  });
+fetch(baseUrl + '/board', {
+	method: 'GET', 
+	headers: myHeaders 
+})
+.then(function(resp) {
+	return resp.json();
+})
+.then(function(resp) {
+	setupColumns(resp.columns);
+});
 
 function setupColumns(columns) {
 	columns.forEach(function (column) {
@@ -35,8 +38,8 @@ function setupColumns(columns) {
 
 function setupCards(col, cards) {
 	cards.forEach(function (card) {
-    var cardObj = new Card(card.id, card.name);
-  	col.addCard(cardObj);
+	    var cardObj = new Card(card.id, card.name);
+		col.addCard(cardObj);
 	});
 }
 
