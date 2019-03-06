@@ -31,7 +31,7 @@ function Card(id, name) {
                 return resp.json();
             })
             .then(function(resp){
-              self.element.querySelector('card-description').innerHTML = cardName;
+                self.element.querySelector('card-description').innerHTML = cardName;
             });
         }
         */
@@ -41,7 +41,10 @@ function Card(id, name) {
 Card.prototype = {
     removeCard: function () {
         var self = this;
-        fetch(baseUrl + '/card/'+ self.id, {method: 'DELETE', headers: myHeaders})
+        fetch(baseUrl + '/card/'+ self.id, {
+            method: 'DELETE', 
+            headers: myHeaders
+        })
         .then(function(resp) {
             return resp.json();
         })
